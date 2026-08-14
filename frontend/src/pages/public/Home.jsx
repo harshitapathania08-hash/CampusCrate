@@ -1,8 +1,9 @@
 import heroImage from "../../assets/images/hero.jpeg";
 import HomeNavbar from "../../components/layout/HomeNavbar";
 import { FaSearch, FaExchangeAlt, FaShieldAlt, FaArrowRight } from "react-icons/fa";
-
+import { useNavigate } from "react-router-dom";
 function Home() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-[#F7F3EC] text-[#111827]">
 
@@ -54,23 +55,19 @@ function Home() {
 
               <div className="mt-9 flex flex-wrap gap-4">
 
-                <button
-                  onClick={() =>
-                    (window.location.href = "/post-lost")
-                  }
-                  className="rounded-2xl bg-[#1E3A8A] px-7 py-4 font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 transition duration-300 hover:-translate-y-1 hover:bg-[#17317A]"
-                >
-                  Report Lost Item
-                </button>
+              <button
+  onClick={() => navigate("/post-lost")}
+  className="rounded-2xl bg-[#1E3A8A] px-7 py-4 font-semibold text-white shadow-lg shadow-[#1E3A8A]/20 transition duration-300 hover:-translate-y-1 hover:bg-[#17317A]"
+>
+  Report Lost Item
+</button>
 
-                <button
-                  onClick={() =>
-                    (window.location.href = "/lost-items")
-                  }
-                  className="rounded-2xl border border-[#D8DCE6] bg-white px-7 py-4 font-semibold text-[#111827] shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-[#F8F8F8]"
-                >
-                  Browse Items
-                </button>
+<button
+  onClick={() => navigate("/lost-items")}
+  className="rounded-2xl border border-[#D8DCE6] bg-white px-7 py-4 font-semibold text-[#111827] shadow-sm transition duration-300 hover:-translate-y-1 hover:bg-[#F8F8F8]"
+>
+  Browse Items
+</button>
 
               </div>
 
